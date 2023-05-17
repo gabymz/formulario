@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css">
+		
+		<title>Formulario</title>
+	</head>
+	<body>
+		<h1 class="text-center">Calificación Entrevista EB3</h1><br>
+		
+		<div class="container">
+			<h2 class="text-center">Información candidato</h2>
+			<div class="informacion">
+				<form  action="send.php" method="POST">
+					<!-- Input para poner datos -->
+					<div class="mb-3">
+						<label for="nameCandidato" class="form-label">Nombre Completo:</label>
+						<input type="text" id="nameCandidato" class="form-control" name="nameCandidato" placeholder="Nombre candidato" onblur=mostrarNombre() required>
+					</div>
+					<div class="mb-3">
+						<label for="mail" class="form-label">Correo electronico:</label>
+						<input type="email" id="mail" class="form-control" name="mail" placeholder="Correo electronico" required>
+					</div>
+					<div class="mb-3">
+						<label for="nameConsultor" class="form-label">Nombre Consultor:</label>
+						<input type="text" id="nameConsultor" class="form-control" name="nameConsultor" placeholder="Consultor" required>
+					</div>
+					<br/>
+					<label for="date">Fecha entrevista:</label>
+					<input type="date" id="date" name="date" required>
+				</form>
+			</div>
+			<br>
+			<div class="entrevista">
+				<!--Selección-->
+				<h2 class="text-center">Entrevista</h2>
+				<div id="tiempo" >
+					<p>1- ¿El candidato puede tomar decición de vinculación en un tiempo?</p>
+					<!--<label for="tomaDecision"></label>-->
+					<div>
+						<input type="radio" id="menos45dias" name="tomaDecision" value="menos45dias">
+						<label for="menos45dias">Menos de 45 días.</label>
+						<input type="radio" id="mas45dias" name="tomaDecision" value="mas45dias">
+						<label for="mas45dias">Más de 45 días.</label><br><br>
+					</div>
+				</div>
+				<div id="factor">
+					<p>2- ¿Cúal es el factor del cual depende la decisión de iniciar el proceso?</p>
+					<!--<label for="factorDecision"></label>-->
+					<div>
+						<input type="radio" id="faltaIngresos" name="factorDecision" value="faltaIngresos">
+						<label for="faltaIngresos">Falta Ingresos.</label>
+						<input type="radio" id="decisionFamiliar" name="factorDecision" value="decisionFamiliar">
+						<label for="decisionFamiliar">Decision Familiar.</label><br><br>
+					</div>
+				</div>
+				<div id="recursos">
+					<p>3- ¿El candidato cuenta con los recursos económicos para el proceso?</p>
+					<!--<label for="recursosProceso"></label>-->
+					<div>
+						<input type="radio" id="si1" name="recursosProceso" value="si1">
+						<label for="si1">Si</label>
+						<input type="radio" id="no1" name="recursosProceso" value="no1">
+						<label for="no1">No</label><br><br>
+					</div>
+				</div>
+				<div id="interes">
+					<p>4- ¿Durante la entrevista el candidato mostró interés por algún sponsor en particular?</p>
+					<!--<label for="sponsor"></label>-->
+					<div>
+						<input type="radio" id="si2" name="sponsor" value="si2">
+						<label for="si2">Si</label>
+						<input type="radio" id="no2" name="sponsor" value="no2">
+						<label for="no2">No</label><br><br>
+					</div>
+				</div>
+				<!-- Cálculo de la calificación -->
+				<button type="button" class="btn btn-primary" onclick="validarCampos()">Calificar</button><br>
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<div id="seccionResultados" style="display: none;">
+				<h2 class="text-center">Resultado Entrevista</h2><br>
+				
+				<p>El deal de</p>
+				<div><span id="resultadoCandidato"></span></div><br>
+				
+				<p>Se moverá al stage de</p>
+				<div><span id="resultadoStage"></span></div><br>
+				
+				<p>Con un score de</p>
+				<div><span id="resultadoCalificacion"></span></div><br><br>
+				
+				<div>
+					<!-- Botón para enviar el formulario -->
+					<input type="submit" class="btn btn-primary" value="Terminar">
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="./form.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
