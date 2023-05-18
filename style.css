@@ -7,11 +7,23 @@
 
 
 @media (min-width: 480px) {
-
+    .container {
+        margin: 40px auto;
+        max-width: 800px;
+        padding: 20px;
+    }
 }
 @media (min-width: 768px) {
-
+    .container {
+        margin: 40px auto;
+        max-width: 800px;
+        padding: 20px;
+    }
 }
 @media (min-width: 1024px) {
-
+    .container {
+        margin: 40px auto;
+        max-width: 800px;
+        padding: 20px;
+    }
 }
