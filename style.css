@@ -4,6 +4,10 @@
 .form-select {
     width: 50%;
 }
+.fixed-width {
+    width: 100px;
+}
+
 
 
 @media (min-width: 480px) {

@@ -10,71 +10,66 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="text-center">Calificación Entrevista EB3</h1><br>
+			<h1 class="text-center fw-bold">Calificación Entrevista EB3</h1><br>
 
 			<div class="row">
 				<form method="POST" action="send.php">
-					<h2 class="text-center">Información candidato</h2>
+					<h2 class="text-center text-decoration-underline">Información candidato</h2>
 					<!-- Input para poner datos -->
-					<div class="mb-3">
-						<label for="nameCandidato" class="form-label">Nombre Completo:</label>
-						<input type="text" id="nameCandidato" class="form-control" name="nameCandidato" placeholder="Nombre candidato" onblur=mostrarNombre() required>
+					<div class="input-group mb-3">
+						<span class="input-group-text  fw-bold" id="basic-addon1">Nombre Completo</span>
+						<input type="text" id="nameCandidato" class="form-control" name="nameCandidato" placeholder="Candidato" aria-label="Nombre candidato" aria-describedby="basic-addon1" onblur=mostrarNombre() required>
 					</div>
-					<div class="mb-3">
-						<label for="mail" class="form-label">Correo electronico:</label>
-						<input type="email" id="mail" class="form-control" name="mail" placeholder="Correo electronico" required>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon2">@</span>
+						<input type="email" id="mail" class="form-control" name="mail" placeholder="Correo electronico" aria-label="Correo electronico" aria-describedby="basic-addon2" required>
 					</div>
-					<div class="mb-3">
-						<label for="nameConsultor" class="form-label">Nombre Consultor:</label>
-						<input type="text" id="nameConsultor" class="form-control" name="nameConsultor" placeholder="Consultor" required>
+					<div class="input-group mb-3">
+						<span class="input-group-text  fw-bold" id="basic-addon3">Nombre Consultor</span>
+						<input type="text" id="nameConsultor" class="form-control" name="nameConsultor" placeholder="Consultor" aria-label="Consultor" aria-describedby="basic-addon3" required>
 					</div>
-					<br/>
-					<label for="date">Fecha entrevista:</label>
-					<input type="date" id="date" name="date" required>
+
+					<label for="date" class="fw-bold" id="basic-addon4">Fecha entrevista:</label>
+					<input type="date" id="date" name="date" aria-describedby="basic-addon4" required>
 				</form>
 			</div>
 			<br>
 			<div class="entrevista">
 				<!--Selección-->
-				<h2 class="text-center">Entrevista</h2>
+				<h2 class="text-center text-decoration-underline">Entrevista</h2>
 				<div id="tiempo" >
-					<p>1- ¿El candidato puede tomar decición de vinculación en un tiempo?</p>
-					<!--<label for="tomaDecision"></label>-->
-					<div>
-						<input type="radio" id="menos45dias" name="tomaDecision" value="menos45dias">
-						<label for="menos45dias">Menos de 45 días.</label>
-						<input type="radio" id="mas45dias" name="tomaDecision" value="mas45dias">
-						<label for="mas45dias">Más de 45 días.</label><br><br>
+					<p>1- ¿El candidato puede tomar decición de vinculación en un tiempo?</p>				   					<div>
+						<input class="form-check-input" type="radio" id="menos45dias" name="tomaDecision" value="menos45dias">
+						<label class="form-check-label" for="menos45dias">Menos de 45 días.</label>
+						<input class="form-check-input" type="radio" id="mas45dias" name="tomaDecision" value="mas45dias">
+						<label class="form-check-label" for="mas45dias">Más de 45 días.</label><br><br>
 					</div>
 				</div>
 				<div id="factor">
 					<p>2- ¿Cúal es el factor del cual depende la decisión de iniciar el proceso?</p>
-					<!--<label for="factorDecision"></label>-->
 					<div>
-						<input type="radio" id="faltaIngresos" name="factorDecision" value="faltaIngresos">
-						<label for="faltaIngresos">Falta Ingresos.</label>
-						<input type="radio" id="decisionFamiliar" name="factorDecision" value="decisionFamiliar">
-						<label for="decisionFamiliar">Decision Familiar.</label><br><br>
+						<input class="form-check-input" type="radio" id="faltaIngresos" name="factorDecision" value="faltaIngresos">
+						<label class="form-check-label" for="faltaIngresos">Falta Ingresos.</label>
+						<input class="form-check-input" type="radio" id="decisionFamiliar" name="factorDecision" value="decisionFamiliar">
+						<label class="form-check-label" for="decisionFamiliar">Decision Familiar.</label><br><br>
 					</div>
 				</div>
 				<div id="recursos">
 					<p>3- ¿El candidato cuenta con los recursos económicos para el proceso?</p>
-					<!--<label for="recursosProceso"></label>-->
 					<div>
-						<input type="radio" id="si1" name="recursosProceso" value="si1">
-						<label for="si1">Si</label>
-						<input type="radio" id="no1" name="recursosProceso" value="no1">
-						<label for="no1">No</label><br><br>
+						<input class="form-check-input" type="radio" id="si1" name="recursosProceso" value="si1">
+						<label class="form-check-label" for="si1">Si</label>
+						<input class="form-check-input" type="radio" id="no1" name="recursosProceso" value="no1">
+						<label class="form-check-label" for="no1">No</label><br><br>
 					</div>
 				</div>
 				<div id="interes">
 					<p>4- ¿Durante la entrevista el candidato mostró interés por algún sponsor en particular?</p>
-					<!--<label for="sponsor"></label>-->
 					<div>
-						<input type="radio" id="si2" name="sponsor" value="si2">
-						<label for="si2">Si</label>
-						<input type="radio" id="no2" name="sponsor" value="no2">
-						<label for="no2">No</label><br><br>
+						<input class="form-check-input" type="radio" id="si2" name="sponsor" value="si2">
+						<label class="form-check-label" for="si2">Si</label>
+						<input class="form-check-input" type="radio" id="no2" name="sponsor" value="no2">
+						<label class="form-check-label" for="no2">No</label><br><br>
 					</div>
 				</div>
 				<!-- Cálculo de la calificación -->
@@ -82,19 +77,22 @@
 			</div>
 		</div>
 		<br>
-		<div class="container">
-			<div id="seccionResultados" style="display: none;">
-				<h2 class="text-center">Resultado Entrevista</h2><br>
+		<div id="entrevista">
+			<div class="text-center container px-4 border border-3 rounded" id="seccionResultados" style="display: none;">
+				<h2 class="text-center text-decoration-underline">Resultado Entrevista</h2><br>
 				
-				<p>El deal de</p>
-				<div><span id="resultadoCandidato"></span></div><br>
-				
-				<p>Se moverá al stage de</p>
-				<div><span id="resultadoStage"></span></div><br>
-				
-				<p>Con un score de</p>
-				<div><span id="resultadoCalificacion"></span></div><br><br>
-				
+				<div class="border border-1 mb-3">
+					<p class="h5">El deal de</p>
+					<div><span class="p-2 border bg-light fixed-width" id="resultadoCandidato"></span></div><br>
+				</div>
+				<div class="border border-1 mb-3">
+					<p class="h5">Se moverá al stage de</p>
+					<div><span class="p-2 border bg-light fixed-width" id="resultadoStage"></span></div><br>
+				</div>
+				<div class="border border-1 mb-3">
+					<p class="h5">Con un score de</p>
+					<div><span class="p-2 border bg-light fixed-width" id="resultadoCalificacion"></span></div><br><br>
+				</div>
 				<div>
 					<!-- Botón para enviar el formulario -->
 					<input type="submit" class="btn btn-primary" value="Terminar">
